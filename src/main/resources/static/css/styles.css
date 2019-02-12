@@ -1,12 +1,14 @@
 .knapp{
-    padding: 1em;
+    padding: 1.5em;
     background-color: blue;
     color: white;
     border-radius: 5px;
     text-align: center;
+    margin: 0 auto;
+    width: 10%;
 }
 .mainContainer{
-    padding: 10%;
+    padding: 10px 10%;
     display: flex;
 }
 .spillerBlokk{

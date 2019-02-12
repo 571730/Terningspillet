@@ -6,6 +6,9 @@
     <title>Spill</title>
 </head>
 <body>
+<div class="mainContainer" th:if="${ferdig}">
+    <h1>Vinneren er <span th:text="${vinner.navn}"></span></h1>
+</div>
 <div class="mainContainer">
         <th:block th:each="spiller: ${spillerListe}">
             <div class="spillerBlokk">
@@ -15,9 +18,17 @@
             </div>
         </th:block>
 </div>
+<div class="mainContainer" th:if="${startet and !ferdig}">
+    <div class="terninger">
+        <th:block th:each="terning : ${terninger}">
+            <h1>Terning: <span th:text="${terning.verdi}"></span></h1>
+        </th:block>
+    </div>
+</div>
 <div class="mainContainer">
     <a th:if="${!startet}" th:href="@{/spill/go}"><div class="knapp">Spill</div> </a>
-    <a th:if="${startet}" th:href="@{/spill/runde}"><div class="knapp">Spill Runde</div> </a>
+    <a th:if="${startet and !ferdig}" th:href="@{/spill/runde}"><div class="knapp">Spill Runde</div> </a>
+    <a th:if="${ferdig}" th:href="@{/spill/reset}"><div class="knapp">Spill på nytt</div> </a>
 </div>
 </body>
 </html>

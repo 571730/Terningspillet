@@ -15,6 +15,10 @@ public class Spiller {
         verdi = kopp.trill();
     }
 
+    public void setVerdi(Integer verdi) {
+        this.verdi = verdi;
+    }
+
     public int getVerdi() {
         return verdi;
     }

@@ -55,6 +55,19 @@ public class Terningspillet {
         }
     }
 
+    public void reset(){
+        for (Spiller spiller : spillere){
+            spiller.setVerdi(0);
+        }
+        tur = 0;
+        startet = true;
+        ferdig = false;
+    }
+
+    public boolean isFerdig() {
+        return ferdig;
+    }
+
     public boolean erFerdig(){
         return tur == spillere.size();
     }

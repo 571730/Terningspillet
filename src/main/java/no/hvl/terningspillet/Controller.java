@@ -44,12 +44,22 @@ public class Controller {
 
     @GetMapping("/spill")
     public String spill(Model model){
+        if (spillet.isFerdig()){
+            model.addAttribute("vinner", spillet.getVinner());
+        }
+        model.addAttribute("vinner", spillet.getSpillere().get(0));
         model.addAttribute("spillerListe", spillet.getSpillere());
         model.addAttribute("startet", spillet.isStartet());
+        model.addAttribute("ferdig", spillet.isFerdig());
         model.addAttribute("terninger", spillet.getKopp().getTerninger());
         return "spill";
     }
 
+    @GetMapping("/spill/reset")
+    public String reset(){
+        spillet.reset();
+        return "redirect:/spill";
+    }
     @GetMapping("/spill/go")
     public String runSpill(){
         spillet.spill();
@@ -59,6 +69,8 @@ public class Controller {
     @GetMapping("/spill/runde")
     public String spillRunde(){
         spillet.spillTur();
+
+        return "redirect:/spill";
     }
 
     @GetMapping("/leggTil")
