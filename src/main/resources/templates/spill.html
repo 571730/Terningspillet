@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
+    <title>Spill</title>
+</head>
+<body>
+<div class="mainContainer">
+        <th:block th:each="spiller: ${spillerListe}">
+            <div class="spillerBlokk">
+                <h2 th:text="${spiller.navn}"></h2>
+                <h3>Poeng:</h3>
+                <h2 th:text="${spiller.verdi}"></h2>
+            </div>
+        </th:block>
+</div>
+<div class="mainContainer">
+    <a th:if="${!startet}" th:href="@{/spill/go}"><div class="knapp">Spill</div> </a>
+    <a th:if="${startet}" th:href="@{/spill/runde}"><div class="knapp">Spill Runde</div> </a>
+</div>
+</body>
+</html>

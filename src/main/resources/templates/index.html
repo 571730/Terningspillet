@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Terningspillet</title>
+</head>
+<body>
+<div class="mainContainer">
+    <h1>Terningspillet</h1>
+    <h3>Velg antall spillere</h3>
+    <form method="post" th:action="@{/antall}">
+        <select name="antallSpillere">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">4</option>
+        </select>
+        <input type="submit" value="Start">
+    </form>
+</div>
+
+</body>
+</html>

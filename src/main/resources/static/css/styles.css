@@ -1,0 +1,18 @@
+.knapp{
+    padding: 1em;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+}
+.mainContainer{
+    padding: 10%;
+    display: flex;
+}
+.spillerBlokk{
+    margin: 0 auto;
+    padding: 10%;
+    background-color: #ff4e00;
+    color: white;
+    border-radius: 10px;
+}

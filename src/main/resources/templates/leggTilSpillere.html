@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Legg til spillere</title>
+</head>
+<body>
+<div class="mainContainer">
+    <form method="post" th:action="@{/leggTilSpillere}">
+        <th:block th:each="spiller, iStat: ${spillere}">
+            <input th:name="name" th:placeholder="${iStat.index}">
+        </th:block>
+        <input type="submit" th:value="LeggTilSpillere" th:name="alleSpillere">
+    </form>
+</div>
+</body>
+</html>
