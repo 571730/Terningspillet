@@ -30,8 +30,8 @@
 </div>
 <div class="mainContainer">
     <div class="knappBox">
-        <a th:if="${!startet}" th:href="@{/spill/go}"><div class="knapp">Spill</div> </a>
-        <a th:if="${startet and !ferdig}" th:href="@{/spill/runde}"><div class="knapp">Spill Runde</div> </a>
+        <a th:if="${!startet}" th:href="@{/spill/go}"><div class="knapp">Start spillet</div> </a>
+        <a th:if="${startet and !ferdig}" th:href="@{/spill/runde}"><div class="knapp">Trill terninger</div> </a>
         <a th:if="${ferdig}" th:href="@{/spill/reset}"><div class="knapp">Spill på nytt</div> </a>
     </div>
 </div>

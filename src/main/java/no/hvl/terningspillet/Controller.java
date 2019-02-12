@@ -69,7 +69,6 @@ public class Controller {
     @GetMapping("/spill/runde")
     public String spillRunde(){
         spillet.spillTur();
-
         return "redirect:/spill";
     }
 

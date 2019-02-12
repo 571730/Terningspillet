@@ -1,6 +1,5 @@
 package no.hvl.terningspillet.spillet;
 
-import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -25,12 +24,6 @@ public class Terningspillet {
         ferdig = false;
     }
 
-//    public void leggTilSpillere(){
-//        for (int i = 0; i < antallSpillere; i++){
-//            leggTilSpiller();
-//        }
-//    }
-
     public boolean isStartet() {
         return startet;
     }
@@ -41,9 +34,6 @@ public class Terningspillet {
 
     public void spill(){
         startet = true;
-//        for (Spiller spiller : spillere){
-//            spiller.spill(kopp);
-//        }
         tur = 0;
     }
 
@@ -59,6 +49,9 @@ public class Terningspillet {
         for (Spiller spiller : spillere){
             spiller.setVerdi(0);
         }
+        for (Terning t : kopp.getTerninger()){
+            t.setVerdi(0);
+        }
         tur = 0;
         startet = true;
         ferdig = false;
@@ -73,8 +66,7 @@ public class Terningspillet {
     }
 
     public Spiller getVinner(){
-        Spiller vinner = spillere.stream().max(Comparator.comparing(Spiller::getVerdi)).orElseThrow(NoSuchElementException::new);
-        return vinner;
+        return spillere.stream().max(Comparator.comparing(Spiller::getVerdi)).orElseThrow(NoSuchElementException::new);
     }
 
     public Kopp getKopp() {
