@@ -43,3 +43,34 @@ body{
 .blueText{
     color: #66fcf1;
 }
+select{
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 8px;
+    background-color: #1f2833;
+    color: #66fcf1;
+}
+.inputText{
+    width: 100%;
+    border: solid thin #66fcf1;
+    border-radius: 4px;
+    margin: 20px auto;
+    padding: 12px;
+    resize: vertical;
+    box-sizing : border-box;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #0b0c10;
+    border: solid thin #66fcf1;
+    color: #c5c6c7;
+    padding: 1.5em;
+    text-decoration: none;
+    margin: 20px auto;
+    border-radius: 5px;
+    width: 100%;
+}
+input[type=button], input[type=submit]:hover, input[type=reset]{
+    transition: 0.3s;
+    background-color: #1f2833;
+    cursor: pointer;
+}

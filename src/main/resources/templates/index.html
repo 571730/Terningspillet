@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Terningspillet</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
 </head>
 <body>
 <div class="mainContainer">
     <h1>Terningspillet</h1>
-    <h3>Velg antall spillere</h3>
+</div>
+<div class="mainContainer">
+    <h3 class="greyText">Velg antall spillere</h3>
+</div>
+<div class="mainContainer">
     <form method="post" th:action="@{/antall}">
         <select name="antallSpillere">
             <option value="2">2</option>

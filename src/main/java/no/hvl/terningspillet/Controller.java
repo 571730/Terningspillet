@@ -44,10 +44,14 @@ public class Controller {
 
     @GetMapping("/spill")
     public String spill(Model model){
-        if (spillet.isFerdig()){
-            model.addAttribute("vinner", spillet.getVinner());
-        }
         model.addAttribute("vinner", spillet.getSpillere().get(0));
+        if (spillet.isFerdig()){
+            if (spillet.isUavgjort()){
+                model.addAttribute("uavgjort", spillet.hentVinnere());
+            } else {
+                model.addAttribute("vinner", spillet.getVinner());
+            }
+        }
         model.addAttribute("spillerListe", spillet.getSpillere());
         model.addAttribute("startet", spillet.isStartet());
         model.addAttribute("ferdig", spillet.isFerdig());

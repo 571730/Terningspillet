@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Legg til spillere</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/styles.css}">
 </head>
 <body>
 <div class="mainContainer">
     <form method="post" th:action="@{/leggTilSpillere}">
         <th:block th:each="spiller, iStat: ${spillere}">
-            <input th:name="name" th:placeholder="${iStat.index}">
+            <input class="inputText" th:name="name" th:placeholder="Spiller..">
         </th:block>
-        <input type="submit" th:value="LeggTilSpillere" th:name="alleSpillere">
+        <input type="submit" value="Legg til alle spillere" th:name="alleSpillere">
     </form>
 </div>
 </body>

@@ -3,7 +3,11 @@ package no.hvl.terningspillet.spillet;
 
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
 
 
 public class Terningspillet {
@@ -67,6 +71,26 @@ public class Terningspillet {
 
     public Spiller getVinner(){
         return spillere.stream().max(Comparator.comparing(Spiller::getVerdi)).orElseThrow(NoSuchElementException::new);
+    }
+
+    public boolean isUavgjort(){
+        List<Spiller> sortert = spillere.stream()
+                .sorted(Comparator.comparing(Spiller::getVerdi))
+                .collect(Collectors.toList());
+        return (sortert.get(0).getVerdi() == sortert.get(1).getVerdi());
+    }
+
+    public ArrayList<Spiller> hentVinnere(){
+        ArrayList<Spiller> vinnere = new ArrayList<>();
+        List<Spiller> sortert = spillere.stream()
+                .sorted(Comparator.comparing(Spiller::getVerdi))
+                .collect(Collectors.toList());
+        int vinnerSum = sortert.get(0).getVerdi();
+        for (Spiller s : sortert){
+            if (s.getVerdi() == vinnerSum)
+                vinnere.add(s);
+        }
+        return vinnere;
     }
 
     public Kopp getKopp() {

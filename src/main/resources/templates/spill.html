@@ -6,8 +6,13 @@
     <title>Spill</title>
 </head>
 <body>
-<div class="mainContainer" th:if="${ferdig}">
+<div class="mainContainer" th:if="${ferdig and uavgjort == null}">
     <h1 class="greyText">Vinneren er <span class="blueText" th:text="${vinner.navn}"></span></h1>
+</div>
+<div class="mainContainer" th:if="${ferdig and uavgjort != null}">
+    <h1 class="greyText">Det ble uavgjort mellom
+        <span th:each="spiller : ${uavgjort}" class="blueText" th:text="${spiller.navn} "></span>
+    </h1>
 </div>
 <div class="mainContainer" th:if="${!ferdig}">
     <h1 class="greyText">Vi spiller <span class="blueText">Terningspillet</span></h1>
