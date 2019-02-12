@@ -1,20 +1,45 @@
 .knapp{
     padding: 1.5em;
-    background-color: blue;
-    color: white;
+    background-color: #0b0c10;
+    border-style: solid;
+    border-width: thin;
+    border-color: #66fcf1;
+    color: #c5c6c7;
     border-radius: 5px;
     text-align: center;
     margin: 0 auto;
-    width: 10%;
+}
+.knapp:hover{
+    transition: 0.3s;
+    background-color: #1f2833;
+}
+a{
+    text-decoration: none;
 }
 .mainContainer{
-    padding: 10px 10%;
+    padding: 10px 15%;
     display: flex;
+    justify-content: center;
 }
 .spillerBlokk{
-    margin: 0 auto;
+    margin: 0 2.5%;
     padding: 10%;
-    background-color: #ff4e00;
-    color: white;
+    text-align: center;
+    background-color: #1f2833;
+    color: #66fcf1;
     border-radius: 10px;
+    flex-grow: 1;
+}
+body{
+    color: #66fcf1;
+    background-color: #0b0c10;
+    font-family: "arial";
+    font-weight: lighter;
+    letter-spacing: 0.1em;
+}
+.greyText{
+    color: #c5c6c7;
+}
+.blueText{
+    color: #66fcf1;
 }
