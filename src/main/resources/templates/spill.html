@@ -11,7 +11,7 @@
 </div>
 <div class="mainContainer" th:if="${ferdig and uavgjort != null}">
     <h1 class="greyText">Det ble uavgjort mellom
-        <span th:each="spiller : ${uavgjort}" class="blueText" th:text="${spiller.navn} "></span>
+        <span th:each="spiller : ${uavgjort}" class="blueText" th:text="${spiller.navn} + ' '"></span>
     </h1>
 </div>
 <div class="mainContainer" th:if="${!ferdig}">
