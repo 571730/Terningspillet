@@ -1,10 +1,17 @@
 package no.hvl.terningspillet.spillet;
 
+/**
+ * Koppen holder kontroll paa alle terninger
+ */
 public class Kopp {
     private int id;
     private int sum;
     private Terning[] terninger;
 
+    /**
+     * Oppretter en kopp, og lager terninger til koppen
+     * @param id
+     */
     public Kopp(int id){
         this.id = id;
         sum = 0;
@@ -17,6 +24,10 @@ public class Kopp {
         return terninger;
     }
 
+    /**
+     * Triller alle terninger i koppen
+     * @return summen av alle terninger i koppen
+     */
     public int trill(){
         sum = 0;
         for (int i = 0; i < terninger.length; i++){
