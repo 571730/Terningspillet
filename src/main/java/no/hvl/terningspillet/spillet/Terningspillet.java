@@ -74,17 +74,19 @@ public class Terningspillet {
     }
 
     public boolean isUavgjort(){
-        List<Spiller> sortert = spillere.stream()
-                .sorted(Comparator.comparing(Spiller::getVerdi))
-                .collect(Collectors.toList());
+        List<Spiller> sortert = sort(spillere);
         return (sortert.get(0).getVerdi() == sortert.get(1).getVerdi());
+    }
+
+    public List<Spiller> sort(ArrayList<Spiller> listen){
+        return spillere.stream()
+                .sorted(Comparator.comparing(Spiller::getVerdi).reversed())
+                .collect(Collectors.toList());
     }
 
     public ArrayList<Spiller> hentVinnere(){
         ArrayList<Spiller> vinnere = new ArrayList<>();
-        List<Spiller> sortert = spillere.stream()
-                .sorted(Comparator.comparing(Spiller::getVerdi))
-                .collect(Collectors.toList());
+        List<Spiller> sortert = sort(spillere);
         int vinnerSum = sortert.get(0).getVerdi();
         for (Spiller s : sortert){
             if (s.getVerdi() == vinnerSum)
