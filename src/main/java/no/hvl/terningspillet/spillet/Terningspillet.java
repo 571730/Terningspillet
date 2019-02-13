@@ -79,7 +79,7 @@ public class Terningspillet {
     }
 
     public List<Spiller> sort(ArrayList<Spiller> listen){
-        return spillere.stream()
+        return listen.stream()
                 .sorted(Comparator.comparing(Spiller::getVerdi).reversed())
                 .collect(Collectors.toList());
     }
